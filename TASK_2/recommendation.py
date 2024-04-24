@@ -19,7 +19,7 @@ isolation_forest.fit(monthly_sales[['SALES']])
 
 # Trend analysis function
 def get_monthly_trend(month, year):
-    data_subset = monthly_sales[(monthly_sales['MONTH_ID'] == month) & (monthly_sales['YEAR_ID'] == year)]
+    data_subset = monthly_sales[(monthly_sales['MONTH_ID'] == month) & (monthly_sales['Year'] == year)]
     if data_subset.empty:
         return None
     decomposition = seasonal_decompose(data_subset['SALES'], model='additive')
@@ -43,7 +43,7 @@ def get_recommendation(month):
         prediction = isolation_forest.predict(month_data[['SALES']])
         is_anomaly = prediction[0] == -1
         # Trend analysis
-        trend = get_monthly_trend(month, month_data['YEAR_ID'].values[0])
+        trend = get_monthly_trend(month, month_data['Year'].values[0])
         response = ""
         if is_anomaly:
             response = "This month seems to have an unusual sales pattern compared to usual trends."
