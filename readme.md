@@ -1,6 +1,4 @@
-#!/bin/bash
-
-cat << EOF > README.md
+ README.md
 # Flask API for Data Analysis
 
 This repository contains Flask APIs for solving various data analysis tasks.
@@ -13,15 +11,16 @@ The code for question 1 and 2 is contained in \`app.py\`.
 
 To run the Flask API for gender prediction based on order ID, use the following command:
 
-\`\`\`bash
+Run 
 python app.py
-\`\`\`
+
 
 ### Question 3
 
 The code for question 3 is contained in \`index.py\`.
 
 To run the Flask API for gender prediction based on order ID using Gender API, use the following command:
+Run
 
 \`\`\`bash
 python index.py
@@ -32,6 +31,7 @@ python index.py
 The code for question 4 is contained in \`recommendation.py\`.
 
 To run the Flask API for generating recommendations for a trend or anomaly in a given month, use the following command:
+Run
 
 \`\`\`bash
 python recommendation.py
